@@ -12,8 +12,11 @@
       <header>
         <div class="navbar navbar-default">
           <div class="navbar-header">
-            <h1 v-text="sitename"></h1>
+            <h1>{{ sitename }}</h1>
           </div>
+        </div>
+        <div class="nav navbar-nav navbar-right cart">
+          <span class="glyphicon glyphicon-shopping-cart">{{ cartItemCount }}</span>
         </div>
       </header>
       <main>
@@ -69,6 +72,11 @@
           methods: {
             addToCart: function() {
               this.cart.push( this.product.id );
+            }
+          },
+          computed: {
+            cartItemCount: function() {
+              return this.cart.length || '';
             }
           }
       });
