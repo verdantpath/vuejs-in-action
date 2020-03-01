@@ -30,7 +30,7 @@
             <h1 v-text="product.title"></h1>
             <p v-html="product.description"></p>
             <p class="price">{{ product.price | formatPrice }}</p>
-            <button class="default" v-on:click="addToCart">Add to cart</button>
+            <button class="default" v-on:click="addToCart" v-show="canAddToCart">Add to cart</button>
           </div>
         </div>
       </main>
