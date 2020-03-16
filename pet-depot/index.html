@@ -40,53 +40,67 @@
           </div>
           <div v-else>
             <div class="col-md-10 col-md-offset-1">
-              <strong>First Name:</strong>
-              <input v-model="order.firstName" class="form-control" />
-            </div>
-            <div class="col-md-6">
-              <strong>Last Name:</strong>
-              <input v-model="order.lastName" class="form-control" />
-            </div>
-            <div class="form-group">
-              <div class="col-md-12"><strong>Address:</strong></div>
-              <div class="col-md-12">
-                <input v-model="order.address" class="form-control" />
+              <div class="panel panel-info">
+                <div class="panel-heading">Pet Depot Checkout</div>
+                <div class="panel-body">
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <h4><strong>Enter Your Information</strong></h4>
+                    </div> 
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <strong>First Name:</strong>
+                        <input v-model="order.firstName" class="form-control" />
+                      </div>
+                      <div class="col-md-6">
+                        <strong>Last Name:</strong>
+                        <input v-model="order.lastName" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12"><strong>Address:</strong></div>
+                      <div class="col-md-12">
+                        <input v-model="order.address" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12"><strong>City:</strong></div>
+                      <div class="col-md-12">
+                        <input v-model="order.city" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-2">
+                        <strong>State:</strong>
+                        <select v-model="order.state" class="form-control">
+                          <option disabled value="">State</option>
+                          <option>Al</option>
+                          <option>AR</option>
+                          <option>CA</option>
+                          <option>NV</option>
+                          <option>OR</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6 col-md-offset-4">
+                        <strong>Zip / Postal Code:</strong>
+                        <input v-model="order.zip" class="form-control" />
+                      </div>
+                    </div>
+                    <div class="col-md-12 verify">
+                      <pre>
+                        First Name: {{ order.firstName }}
+                        Last Name: {{ order.lastName }}
+                        Address: {{ order.address }}
+                        City: {{ order.city }}
+                        Zip: {{ order.zip }}
+                        State: {{ order.state }}
+                      </pre>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-md-12"><strong>City:</strong></div>
-              <div class="col-md=12">
-                <input v-model="order.city" class="form-control" />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-md-2">
-                <strong>State:</strong>
-                <select v-model="order.state" class="form-control">
-                  <option disabled value="">State</option>
-                  <option>Al</option>
-                  <option>AR</option>
-                  <option>CA</option>
-                  <option>NV</option>
-                  <option>OR</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-md-6 col-md-offset-4">
-                <strong>Zip / Postal Code:</strong>
-                <input v-model="order.zip" class="form-control" />
-              </div>
-            </div>
-            <div class="col-md-12 verify">
-              <pre>
-                First Name: {{ order.firstName }}
-                Last Name: {{ order.lastName }}
-                Address: {{ order.address }}
-                City: {{ order.city }}
-                Zip: {{ order.zip }}
-                State: {{ order.state }}
-              </pre>
             </div>
           </div><!-- / v-else -->
         </div>
