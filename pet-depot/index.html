@@ -39,7 +39,7 @@
             </div>
           </div>
           <div v-else>
-            <div class="col-md-6">
+            <div class="col-md-10 col-md-offset-1">
               <strong>First Name:</strong>
               <input v-model="order.firstName" class="form-control" />
             </div>
@@ -103,7 +103,11 @@
           sitename: 'Vue.js Pet Depot',
           order: {
             firstName: '',
-            lastName: ''
+            lastName: '',
+            address: '',
+            city: '',
+            zip: '',
+            state: ''
           },
           product: {
             id: 1001,
