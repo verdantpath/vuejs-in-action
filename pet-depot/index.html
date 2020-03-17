@@ -90,16 +90,21 @@
                     </div>
                     <div class="form-group">
                       <div class="col-md-6 boxes">
-                        <input type="checkbox" id="gift" value="true" v-model="order.gift">
+                        <input type="checkbox" id="gift" value="true" v-bind:true-value="order.sendGift" v-bind:false-value="order.dontSendGift" v-model="order.gift">
                         <label for="gift">Ship As Gift?</label>
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-6 boxes">
-                        <input type="radio" id="home" value="Home" v-model="order.method">
+                        <input type="radio" id="home" v-bind:value="order.home" v-model="order.method">
                         <label for="home">Home</label>
-                        <input type="radio" id="business" value="Business" v-model="order.method">
+                        <input type="radio" id="business" v-bind:value="order.business" v-model="order.method">
                         <label for="business">Business</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary submit" v-on:click="submitForm">Place Order</button>
                       </div>
                     </div>
                     <div class="col-md-12 verify">
@@ -138,8 +143,12 @@
             city: '',
             zip: '',
             state: '',
-            method: 'Home',
-            gift: false
+            method: 'Home Address',
+            business: 'Business Address',
+            home: 'Home Address',
+            gift: 'Send As A Gift',
+            sendGift: 'Send As A Gift',
+            dontSendGift: 'Do Not Send As A Gift'
           },
           product: {
             id: 1001,
@@ -169,6 +178,9 @@
           }
         },
         methods: {
+          submitForm: function() {
+            console.log('Submitted Order');
+          },
           addToCart: function() {
             this.cart.push( this.product.id );
           },
