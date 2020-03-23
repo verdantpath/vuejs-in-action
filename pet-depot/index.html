@@ -74,11 +74,11 @@
                         <strong>State:</strong>
                         <select v-model="order.state" class="form-control">
                           <option disabled value="">State</option>
-                          <option>Al</option>
-                          <option>AR</option>
-                          <option>CA</option>
-                          <option>NV</option>
-                          <option>OR</option>
+                          <option v-bind:value="states.AL">Al</option>
+                          <option v-bind:value="states.AR">AR</option>
+                          <option v-bind:value="states.CA">CA</option>
+                          <option v-bind:value="states.NV">NV</option>
+                          <option v-bind:value="states.OR">OR</option>
                         </select>
                       </div>
                     </div>
@@ -158,6 +158,13 @@
             image: "assets/images/product-fullsize.png",
             availableInventory: 5
           },
+          states: {
+            Al: "Alabama",
+            AR: "Arkansas",
+            CA: "California",
+            NV: "Nevada",
+            OR: "Oregon"
+          }
           cart: []
         },
         filters: {
