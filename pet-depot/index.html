@@ -74,11 +74,7 @@
                         <strong>State:</strong>
                         <select v-model="order.state" class="form-control">
                           <option disabled value="">State</option>
-                          <option v-bind:value="states.AL">Al</option>
-                          <option v-bind:value="states.AR">AR</option>
-                          <option v-bind:value="states.CA">CA</option>
-                          <option v-bind:value="states.NV">NV</option>
-                          <option v-bind:value="states.OR">OR</option>
+                          <option v-for="(state, key, index) in states" v-bind:value="state">{{ key }}</option>
                         </select>
                       </div>
                     </div>
@@ -159,12 +155,12 @@
             availableInventory: 5
           },
           states: {
-            Al: "Alabama",
+            AL: "Alabama",
             AR: "Arkansas",
             CA: "California",
             NV: "Nevada",
             OR: "Oregon"
-          }
+          },
           cart: []
         },
         filters: {
