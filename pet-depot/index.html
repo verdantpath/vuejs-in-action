@@ -36,6 +36,12 @@
               <p class="price">{{ product.price | formatPrice }}</p>
               <button class="btn btn-primary btn-lg" v-on:click="addToCart" v-if="canAddToCart">Add to cart</button>
               <button disabled="true" class="btn btn-primary btn-lg" v-else>Add To Cart</button>
+              <span class="inventory-message" v-if="product.availableInventory - cartItemCount === 0">Sold Out!</span>
+              <span class="inventory-message" v-else-if="product.availableInventory - cartItemCount < 6">Only {{product.availableInventory - cartItemCount}} left!</span>
+              <span class="inventory-message" v-else>Buy Now!</span>
+              <div class="rating">
+                <span v-for="n in 5" v-bind:class="{'rating-active' : checkRating(n)}">☆</span>
+              </div>
             </div>
           </div>
           <div v-else>
@@ -131,7 +137,7 @@
       var webstore = new Vue({
         el: '#app',
         data: {
-          showProduct: false,
+          showProduct: true,
           sitename: 'Vue.js Pet Depot',
           order: {
             firstName: '',
@@ -153,7 +159,8 @@
             description: "A 25 pound bag of <em>irresistible</em>," + "organic goodness for your cat.",
             price: 2000,
             image: "assets/images/product-fullsize.png",
-            availableInventory: 10
+            availableInventory: 10,
+            rating: 3
           },
           states: {
             AL: "Alabama",
@@ -182,6 +189,9 @@
           }
         },
         methods: {
+          checkRating(n) {
+            return this.product.rating - n >= 0;
+          },
           submitForm: function() {
             console.log('Submitted Order');
           },
