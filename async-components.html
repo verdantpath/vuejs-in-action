@@ -9,7 +9,17 @@
   </div>
 <script>
 
-
+const BookComponent = function(resolve, reject) {
+  setTimeout(function() {
+    resolve({
+      template: `
+        <div>
+          <h1>Async Component</h1>
+        </div>
+      `
+    });
+  }, 1000);
+}
 
 new Vue({
   el: '#app',
