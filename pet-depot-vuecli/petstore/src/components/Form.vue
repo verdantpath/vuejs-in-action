@@ -103,9 +103,9 @@
 </template>
 
 <script>
-import MyHeader from '.Header.vue';
+import MyHeader from './Header.vue';
 export default {
-  name: 'Form', 
+  name: 'Form',
   props: ['cartItemCount'],
   data() {
     return {
@@ -135,7 +135,7 @@ export default {
   components: { MyHeader },
   methods: {
     submitForm() {
-      alert('Submitted'):
+      alert('Submitted');
     }
   }
 }
