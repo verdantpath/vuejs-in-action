@@ -10,7 +10,6 @@
         <router-link active-class="active" tag="button" class="btn btn-default btn-lg" :to="{name: 'Form'}">
         <span class="glyphicon glyphicon-shopping-cart">{{ cartItemCount}}</span> Checkout
         </router-link>
-      </button>
     </div>
   </div>
 </header>
@@ -27,9 +26,7 @@ export default {
   },
   props: ['cartItemCount'],
   methods: {
-    showCheckout() {
-      this.$router.push({ name: 'Form' });
-    }
+    
   }
 }
 </script>
@@ -40,6 +37,6 @@ a {
   color: black;
 }
 .router-link-exact-active {
-  color: blue;
+  color: #000;
 }
 </style>

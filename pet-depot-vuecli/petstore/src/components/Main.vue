@@ -10,7 +10,7 @@
             </figure>
           </div>  
           <div class="col-md-6 col-md-offset-0 description">
-            <router-link tag="h1" :to="{ name : 'Id', params: {id: product.id}}" >{{product.title}}</router-link>
+            <router-link tag="h1" :to="{ name : 'Id', params: {id: product.id}, query: {Id: product.id, Product: product.title}}" >{{product.title}}</router-link>
             <p v-html="product.description"></p>
             <p class="price">{{product.price | formatPrice}}</p>
             <button class=" btn btn-primary btn-lg" v-on:click="addToCart(product)" v-if="canAddToCart(product)">Add to cart</button>
