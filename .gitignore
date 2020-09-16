@@ -1,5 +1,7 @@
 # FOLDERS
 .vscode
+*/node_modules
+
 
 # FILES
 .DS_Store
